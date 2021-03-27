@@ -106,10 +106,10 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  newsports = sports.flatten
-  newsports_2 = newsports.uniq!
+  sports.flatten!
+  sports.uniq!
   puts "ユーザーの趣味一覧"
-  newsports_2.each.with_index(1) { |newsport_2, i| puts "No.#{i} #{newsport_2}" }
+  sports.each.with_index(1) { |sport, i| puts "No.#{i} #{sport}" }
 
 
 
@@ -128,7 +128,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  updated_data = user_data.merge!(update_data)
+  user_data.merge!(update_data)
   p user_data
 
 end
@@ -147,18 +147,23 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  def haskey(in_data)
-    puts in_data
-    puts "# 実行結果"
-    if in_data.has_key?(:age)
-      puts "OK"
-    else
-      puts "NG"
-    end
-  end
+  p data1.has_key?(:age) ? 'OK' : 'NG'
+  p data2.has_key?(:age) ? 'OK' : 'NG'
 
-  haskey(data1)
-  haskey(data2)
+
+
+  # def haskey(in_data)
+  #   puts in_data
+  #   puts "# 実行結果"
+  #   if in_data.has_key?(:age)
+  #     puts "OK"
+  #   else
+  #     puts "NG"
+  #   end
+  # end
+
+  # haskey(data1)
+  # haskey(data2)
 
 end
 
