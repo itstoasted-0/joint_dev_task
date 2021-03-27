@@ -5,7 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.push("斎藤")
+  #names.push("斎藤")
+  names << "斎藤"
   p names
 
 end
@@ -105,7 +106,10 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports.each.with_index(1) { |sport, i| puts "会員No.#{i} #{sport}さん" }
+  newsports = sports.flatten
+  newsports_2 = newsports.uniq!
+  puts "ユーザーの趣味一覧"
+  newsports_2.each.with_index(1) { |newsport_2, i| puts "No.#{i} #{newsport_2}" }
 
 
 
@@ -115,6 +119,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  p data[:user][:name]
 
 end
 
@@ -123,6 +128,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
+  updated_data = user_data.merge!(update_data)
+  p user_data
 
 end
 
@@ -130,6 +137,8 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
+  keys_data = data.keys
+  p keys_data
 
 end
 
@@ -138,6 +147,18 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  def haskey(in_data)
+    puts in_data
+    puts "# 実行結果"
+    if in_data.has_key?(:age)
+      puts "OK"
+    else
+      puts "NG"
+    end
+  end
+
+  haskey(data1)
+  haskey(data2)
 
 end
 
@@ -150,6 +171,10 @@ def q16
   ]
 
   # 以下に回答を記載
+  
+  users.each_value do |name, age|
+    puts "私の名前は#{name}です。#{age}歳です。"
+  end
 
 end
 
