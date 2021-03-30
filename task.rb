@@ -242,10 +242,15 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  attr_reader :name
+  def initialize(name:)
     @name = name
   end
+  
+  #ゲッター
+  # def name
+  #   @name
+  # end
 end
 
 def q19
