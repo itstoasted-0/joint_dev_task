@@ -195,9 +195,11 @@ class UserQ17
   end
   
   def info
-    puts "名前:#{@name}"
-    puts "年齢:#{@age}"
-    puts "性別:#{@gender}"
+    puts <<~TEXT
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    TEXT
   end
 
 end
@@ -221,9 +223,9 @@ class UserQ18
   
   def introduce
     if @age > 10
-      puts "こんにちは,#{@name}と申します。宜しくお願いいたします。"
+      print "こんにちは,#{@name}と申します。宜しくお願いいたします。"
     else
-      puts "はいさいまいど〜,#{@name}です！！！"
+      print "はいさいまいど〜,#{@name}です！！！"
     end
   end
 
